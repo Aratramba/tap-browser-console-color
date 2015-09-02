@@ -1,0 +1,31 @@
+{
+  "name": "tap-browser-console-color",
+  "version": "1.0.0",
+  "description": "Adds colors to tap/tape reports inside browser console.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Aratramba/tap-browser-console-color.git"
+  },
+  "keywords": [
+    "tape",
+    "tap",
+    "color",
+    "browser",
+    "console",
+    "log",
+    "pretty"
+  ],
+  "author": "Arjen Scherff-de Water",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Aratramba/tap-browser-console-color/issues"
+  },
+  "homepage": "https://github.com/Aratramba/tap-browser-console-color",
+  "devDependencies": {
+    "tape": "^4.2.0"
+  }
+}
