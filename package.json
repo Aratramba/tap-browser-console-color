@@ -1,6 +1,6 @@
 {
   "name": "tap-browser-console-color",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Adds colors to tap/tape reports inside browser console. ",
   "main": "index.js",
   "scripts": {

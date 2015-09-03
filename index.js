@@ -36,9 +36,8 @@ function patch(){
     }
 
     if(match){
-      args.push('%c'+ line +'%c');
+      args.push('%c'+ line);
       args.push('color: '+ colorMap[match] +';');
-      args.push('color: inherit;');
     }else{
       args.push(line);
     }
