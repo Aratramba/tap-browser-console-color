@@ -1,5 +1,5 @@
 # Tap browser console color
-Adds color to lines that start with `ok` / `# pass` (green) and `not ok` / `# fail` (red). 
+Adds color to console.log messages that start with `ok` / `# pass` (green) and `not ok` / `# fail` (red). 
 
 Monkey patches `console.log`. 
 
