@@ -1,10 +1,11 @@
 {
   "name": "tap-browser-console-color",
   "version": "1.0.0",
-  "description": "Adds colors to tap/tape reports inside browser console.",
+  "description": "Adds colors to tap/tape reports inside browser console. ",
   "main": "index.js",
   "scripts": {
-    "test": "npm test"
+    "test": "npm test",
+    "watch:test": "watchify test/index.js -o demo/test.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/Aratramba/tap-browser-console-color",
   "devDependencies": {
-    "tape": "^4.2.0"
+    "tape": "^4.2.0",
+    "watchify": "^3.4.0"
   }
 }
