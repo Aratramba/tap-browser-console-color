@@ -1,5 +1,5 @@
 'use strict';
-/* global module */
+/* global module, console */
 
 
 const COLOR_GREEN = 'green';
@@ -20,10 +20,10 @@ var colorMap = {
 function patch(){
 
   // store the original
-  window.console._log = window.console.log;
+  console._log = console.log;
 
   // overwrite console.log
-  window.console.log = function(line){
+  console.log = function(line){
 
     var args = [];
     var key;
@@ -43,7 +43,7 @@ function patch(){
       args.push(line);
     }
 
-    window.console._log.apply(window.console, args);
+    console._log.apply(console, args);
   };  
 }
 
@@ -53,9 +53,9 @@ function patch(){
  */
 
 function reset(){
-  if(typeof window.console._log !== 'undefined'){
-    window.console.log = window.console._log;
-    delete window.console._log;
+  if(typeof console._log !== 'undefined'){
+    console.log = console._log;
+    delete console._log;
   }
 }
 

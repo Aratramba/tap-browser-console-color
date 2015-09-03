@@ -1,5 +1,5 @@
 'use strict';
-/* global require */
+/* global require, console */
 
 var log = require('..');
 var test = require('tape');
@@ -7,7 +7,9 @@ var test = require('tape');
 log.patch();
 
 test('whatever', function (assert){
-  assert.equal(1,1);
-  assert.equal(1,2);
+  assert.equal(typeof console._log, 'function');
+  assert.equal(typeof log.patch, 'function');
+  assert.equal(typeof log.reset, 'function');
+  assert.equal('fail', 'pass');
   assert.end();
 });

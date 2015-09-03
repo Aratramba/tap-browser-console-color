@@ -1,6 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
-/* global module */
+/* global module, console */
 
 
 const COLOR_GREEN = 'green';
@@ -21,10 +21,10 @@ var colorMap = {
 function patch(){
 
   // store the original
-  window.console._log = window.console.log;
+  console._log = console.log;
 
   // overwrite console.log
-  window.console.log = function(line){
+  console.log = function(line){
 
     var args = [];
     var key;
@@ -44,7 +44,7 @@ function patch(){
       args.push(line);
     }
 
-    window.console._log.apply(window.console, args);
+    console._log.apply(console, args);
   };  
 }
 
@@ -54,9 +54,9 @@ function patch(){
  */
 
 function reset(){
-  if(typeof window.console._log !== 'undefined'){
-    window.console.log = window.console._log;
-    delete window.console._log;
+  if(typeof console._log !== 'undefined'){
+    console.log = console._log;
+    delete console._log;
   }
 }
 
@@ -6235,7 +6235,7 @@ function base64DetectIncompleteChar(buffer) {
 
 },{"buffer":18}],42:[function(require,module,exports){
 'use strict';
-/* global require */
+/* global require, console */
 
 var log = require('..');
 var test = require('tape');
@@ -6243,8 +6243,10 @@ var test = require('tape');
 log.patch();
 
 test('whatever', function (assert){
-  assert.equal(1,1);
-  assert.equal(1,2);
+  assert.equal(typeof console._log, 'function');
+  assert.equal(typeof log.patch, 'function');
+  assert.equal(typeof log.reset, 'function');
+  assert.equal('fail', 'pass');
   assert.end();
 });
 },{"..":1,"tape":2}]},{},[42]);
