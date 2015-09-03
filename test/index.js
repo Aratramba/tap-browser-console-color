@@ -1,8 +1,10 @@
 'use strict';
 /* global require */
 
-require('..');
+var log = require('..');
 var test = require('tape');
+
+log.patch();
 
 test('whatever', function (assert){
   assert.equal(1,1);
