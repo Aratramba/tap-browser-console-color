@@ -10,7 +10,7 @@ npm install tap-browser-console-color --save-dev
 
 ```js
 var log = require('tap-browser-console-color');
-log.patch(); // adds colors to your console
+log.patch();
 
 // do tape console stuff
 // var test = require('tape');
