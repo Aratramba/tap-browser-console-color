@@ -4,6 +4,10 @@ Adds color to lines that start with `ok` / `# pass` (green) and `not ok` / `# fa
 Monkey patches `console.log`. 
 
 ## Usage
+```bash
+npm install tap-browser-console-color --save-dev
+```
+
 ```js
 var log = require('tap-browser-console-color');
 log.patch(); // adds colors to your console
