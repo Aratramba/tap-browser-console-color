@@ -4,7 +4,7 @@
   "description": "Adds colors to tap/tape reports inside browser console. ",
   "main": "index.js",
   "scripts": {
-    "test": "npm test",
+    "test": "echo \"Open browser console at demo/test.html.\"",
     "watch:test": "watchify test/index.js -o demo/test.js"
   },
   "repository": {
