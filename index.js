@@ -29,17 +29,22 @@ function patch(){
     var key;
     var match;
 
-    for(key in colorMap){
-      if(line.indexOf(key) === 0){
-        match = key;
-      }
-    }
-
-    if(match){
-      args.push('%c'+ line);
-      args.push('color: '+ colorMap[match] +';');
-    }else{
+    if(typeof line !== 'string'){
       args.push(line);
+    }else{
+
+      for(key in colorMap){
+        if(line.indexOf(key) === 0){
+          match = key;
+        }
+      }
+
+      if(match){
+        args.push('%c'+ line);
+        args.push('color: '+ colorMap[match] +';');
+      }else{
+        args.push(line);
+      }
     }
 
     console._log.apply(console, args);
