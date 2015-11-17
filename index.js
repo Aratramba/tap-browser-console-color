@@ -23,27 +23,35 @@ function patch(){
   console._log = console.log;
 
   // overwrite console.log
-  console.log = function(line){
+  console.log = function(){
 
     var args = [];
     var key;
     var match;
 
-    if(typeof line !== 'string'){
-      args.push(line);
-    }else{
+    var line;
+    var i = 0;
+    var l = arguments.length;
 
-      for(key in colorMap){
-        if(line.indexOf(key) === 0){
-          match = key;
-        }
-      }
-
-      if(match){
-        args.push('%c'+ line);
-        args.push('color: '+ colorMap[match] +';');
-      }else{
+    for(; i<l; ++i){
+      line = arguments[i];
+      
+      if(typeof line !== 'string'){
         args.push(line);
+      }else{
+
+        for(key in colorMap){
+          if(line.indexOf(key) === 0){
+            match = key;
+          }
+        }
+
+        if(match){
+          args.push('%c'+ line);
+          args.push('color: '+ colorMap[match] +';');
+        }else{
+          args.push(line);
+        }
       }
     }
 
