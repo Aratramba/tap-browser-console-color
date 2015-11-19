@@ -2,8 +2,8 @@
 /* global module, console */
 
 
-const COLOR_GREEN = 'green';
-const COLOR_RED = 'red';
+var COLOR_GREEN = 'green';
+var COLOR_RED = 'red';
 
 var colorMap = {
   'ok': COLOR_GREEN, 
